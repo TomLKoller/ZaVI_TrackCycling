@@ -15,4 +15,7 @@ Requirements:
 
 The Code was evaluated on a Ubuntu 18.04 LTS Machine
 
+
+Start the Code from the base SixdaysCode directory. Otherwise it wont find the required files
+
 Set the Trial number in the Main Config File

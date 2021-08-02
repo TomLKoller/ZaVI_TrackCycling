@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.ticker as plticker
 import matplotlib
 import sys
 import itertools
@@ -75,11 +76,15 @@ for laser in range(num_lasers):
     l_index=sys.argv[laser*2+1].find("Laser")
     ax=axes[laser]
     ax.plot(errors, label="L"+sys.argv[laser*2+1][l_index+6])
-    ax.legend(loc=1)
-    plt.xlim(0,73)
+    ax.legend(loc=9)
+    ax.set_ylim(-0.7,.95)
+    loc = plticker.MultipleLocator(base=.5) # this locator puts ticks at regular intervals
+    ax.yaxis.set_major_locator(loc)    
+    plt.xlim(0,75)
 
 
 fig.text(0.5, 0.04, 'Round Number', ha='center', va='center')
+
 fig.text(0.04, 0.5, 'Time error (s)', ha='center', va='center', rotation='vertical')
 #plt.show()
 fig.set_size_inches([15,12])	
